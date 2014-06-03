@@ -13,7 +13,7 @@ import javax.swing.JTextField;
 
 /**
  *
- * @author Daniela
+ * @author Miguel L
  */
 public class View extends javax.swing.JFrame {
 

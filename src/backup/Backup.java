@@ -8,7 +8,7 @@ package backup;
 
 /**
  *
- * @author Daniela
+ * @author Miguel L
  */
 public class Backup {
 

@@ -12,7 +12,7 @@ import java.util.Timer;
 
 /**
  *
- * @author Daniela
+ * @author Miguel L
  */
 public class Setting implements Serializable{
     private static final long VersionID =1L;

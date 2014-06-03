@@ -8,7 +8,7 @@ package backup.interfaces;
 
 /**
  *
- * @author Daniela
+ * @author Miguel L
  */
 public interface RWSetting <T>{
     

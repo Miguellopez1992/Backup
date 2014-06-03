@@ -15,7 +15,7 @@ import backup.model.Setting;
 
 /**
  *
- * @author Daniela
+ * @author Miguel L
  */
 public class ControllerRW implements RWSetting<Setting>{
     

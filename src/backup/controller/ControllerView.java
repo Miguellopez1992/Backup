@@ -10,7 +10,7 @@ import backup.View;
 
 /**
  *
- * @author Daniela
+ * @author Miguel L
  */
 public class ControllerView {
     private View view;
