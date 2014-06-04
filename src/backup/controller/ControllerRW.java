@@ -17,8 +17,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import org.apache.log4j.Logger;
 
 /**
  *
@@ -27,6 +26,7 @@ import java.util.logging.Logger;
 public class ControllerRW implements RWSetting<Setting>{
     
     private static ControllerRW controllerRW;
+    private static final  Logger log=Logger.getLogger(ControllerRW.class);
     private  File file;
     
     private ControllerRW() {
@@ -60,9 +60,9 @@ public class ControllerRW implements RWSetting<Setting>{
             output.writeObject(obj);
             output.close();
         } catch (FileNotFoundException ex) {
-            //Logger
+            log.error("Error en el metodo createFile()", ex);
         } catch (IOException  ex) {
-            //Logger
+            log.error("Error en el metodo createFile()", ex);
         }
         return true;
     }
@@ -81,7 +81,7 @@ public class ControllerRW implements RWSetting<Setting>{
             input.close();
             return s;
         } catch (IOException | ClassNotFoundException ex) {
-            //Logger
+               log.error("Error en el metodo createFile()", ex);
         }
         return null;
     }
@@ -91,7 +91,7 @@ public class ControllerRW implements RWSetting<Setting>{
             try {
                 return file.createNewFile();
             } catch (IOException ex) {
-               //Logger
+               log.error("Error en el metodo createFile()", ex);
                return false;
             }
         }

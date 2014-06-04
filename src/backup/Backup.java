@@ -6,12 +6,15 @@
 
 package backup;
 
+import org.apache.log4j.Logger;
+
 /**
  *
  * @author Miguel L
  */
 public class Backup {
-
+    private static final Logger log=Logger.getLogger(Backup.class);
+            
     /**
      * @param args the command line arguments
      */
