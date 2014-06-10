@@ -14,12 +14,13 @@ import org.apache.log4j.Logger;
  */
 public class Backup {
     private static final Logger log=Logger.getLogger(Backup.class);
-            
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        new View().setVisible(true);
+        ViewBarTask viewBarTask = new ViewBarTask();
     }
+
+
     
 }
