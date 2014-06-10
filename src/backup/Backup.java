@@ -6,6 +6,7 @@
 
 package backup;
 
+import java.awt.EventQueue;
 import org.apache.log4j.Logger;
 
 /**
@@ -18,7 +19,9 @@ public class Backup {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        ViewBarTask viewBarTask = new ViewBarTask();
+        EventQueue.invokeLater(()  -> {
+            ViewBarTask viewBarTask = new ViewBarTask();
+        });
     }
 
 

@@ -52,12 +52,4 @@ public class Setting implements Serializable{
     public void setTimerBackup(Timer timerBackup) {
         this.timerBackup = timerBackup;
     }
-
-    @Override
-    public String toString() {
-        return "Setting{" + "sourceAddress=" + sourceAddress + ", destinationAddress=" + destinationAddress + ", dateBackup=" + dateBackup + ", timerBackup=" + timerBackup + '}';
-    }
-    
-    
-    
 }

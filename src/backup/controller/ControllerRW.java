@@ -8,7 +8,6 @@ package backup.controller;
 
 import backup.interfaces.RWSetting;
 import backup.model.Setting;
-import com.sun.corba.se.impl.io.IIOPOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -16,7 +15,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.OutputStream;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Predicate;
 import org.apache.log4j.Logger;
 
 /**
@@ -55,6 +56,7 @@ public class ControllerRW implements RWSetting<Setting>{
         createFile();
         ObjectOutputStream output;
         try {
+            List<Setting> as=new ArrayList<>();
             output=new ObjectOutputStream(new FileOutputStream(file));
             output.flush();
             output.writeObject(obj);

@@ -60,24 +60,13 @@ public class ViewBarTask {
             ImageIcon imag=new ImageIcon(getClass().getResource("/backup/image/backup.png"));
             iconTask = new TrayIcon(imag.getImage().getScaledInstance(imag.getIconWidth(), imag.getIconHeight(), Image.SCALE_DEFAULT), "Backup",pMenu);
             iconTask.setImageAutoSize(true);
-            iconTask.addMouseListener(new MouseAdapter() {
-                @Override
-                public void mouseClicked(MouseEvent e) {
-                    iconTaskClicked();
-                }
-            });
-            iconTask.addActionListener((ActionEvent e) -> {
-                iconTaskClicked();
-            });
             iconTask.setToolTip("Backup");
             try {
                 barTask.add(iconTask);
             } catch (AWTException ex) {
                 log.error(ex);
             }
-            
         }
-        
     }
     
     private void exitItemAction() {
@@ -91,9 +80,6 @@ public class ViewBarTask {
         view.setVisible(true);
     }
 
-    private void iconTaskClicked() {
-        view.setVisible(true);
-    }
 
     private SystemTray barTask;
     private TrayIcon iconTask;
