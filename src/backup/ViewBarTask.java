@@ -38,7 +38,7 @@ public class ViewBarTask {
         viewW=new WeakReference(view);
         view=new View();
         about=new About(null, true);
-        iconTask=new TrayIcon(new ImageIcon(getClass().getResource("/backup/image/backup.png").toString()).getImage());
+        iconTask=new TrayIcon(new ImageIcon(getClass().getResource("/backup/image/backup.png").toString()).getImage(),"Backup");
         pMenu=new PopupMenu("Backup Menu");
         exitItem = new MenuItem("Exit");
         aboutItem = new MenuItem("About");
@@ -64,6 +64,12 @@ public class ViewBarTask {
         iconTask.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
+                iconTaskClicked();
+            }
+        });
+        iconTask.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
                 iconTaskClicked();
             }
         });
