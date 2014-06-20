@@ -7,6 +7,7 @@
 package backup;
 
 import java.awt.EventQueue;
+import java.awt.SystemTray;
 import org.apache.log4j.Logger;
 
 /**
@@ -20,7 +21,13 @@ public class Backup {
      */
     public static void main(String[] args) {
         EventQueue.invokeLater(()  -> {
-            ViewBarTask viewBarTask = new ViewBarTask();
+            String so=System.getProperty("os.name").toLowerCase();
+            if(so.contains("windows")){
+                ViewBarTask viewBarTask = new ViewBarTask();
+            }else{
+                View view = new View();
+                view.setVisible(true);
+            }
         });
     }
 

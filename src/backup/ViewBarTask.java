@@ -21,6 +21,7 @@ import java.lang.ref.WeakReference;
 import javax.swing.ImageIcon;
 import org.apache.log4j.Logger;
 
+
 /**
  *
  * @author miguel

@@ -7,6 +7,8 @@
 package backup.model;
 
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.Date;
 import java.util.Timer;
 
@@ -18,8 +20,8 @@ public class Setting implements Serializable{
     private static final long VersionID =1L;
     private String sourceAddress;
     private String destinationAddress;
-    private Date dateBackup;
-    private Timer timerBackup;
+    private LocalDate dateBackup;
+    private LocalTime timerBackup;
 
     public String getSourceAddress() {
         return sourceAddress;
@@ -37,19 +39,21 @@ public class Setting implements Serializable{
         this.destinationAddress = destinationAddress;
     }
 
-    public Date getDateBackup() {
+    public LocalDate getDateBackup() {
         return dateBackup;
     }
 
-    public void setDateBackup(Date dateBackup) {
+    public void setDateBackup(LocalDate dateBackup) {
         this.dateBackup = dateBackup;
     }
 
-    public Timer getTimerBackup() {
+    public LocalTime getTimerBackup() {
         return timerBackup;
     }
 
-    public void setTimerBackup(Timer timerBackup) {
+    public void setTimerBackup(LocalTime timerBackup) {
         this.timerBackup = timerBackup;
     }
+
+    
 }

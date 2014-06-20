@@ -39,7 +39,7 @@ public class ControllerRW implements RWSetting<Setting>{
      * @return
      */
     public static ControllerRW getController(){
-        if(controllerRW!=null){
+        if(controllerRW==null){
             return new ControllerRW();
         }else{
             return controllerRW;
@@ -76,16 +76,20 @@ public class ControllerRW implements RWSetting<Setting>{
     @Override
     public Setting getSetting() {
         ObjectInputStream input;
-        Setting s;
-        try {
-            input = new ObjectInputStream(new FileInputStream(file));
-            s=(Setting) input.readObject();
-            input.close();
-            return s;
-        } catch (IOException | ClassNotFoundException ex) {
-               log.error("Error en el metodo createFile()", ex);
+        Setting s = null;
+        if (file.exists()) {
+            try {
+                input = new ObjectInputStream(new FileInputStream(file));
+                s = (Setting) input.readObject();
+                input.close();
+                return s;
+            } catch (IOException | ClassNotFoundException ex) {
+                log.error("Error en el metodo createFile()", ex);
+            }
+        } else {
+            return new Setting();
         }
-        return null;
+        return s;
     }
 
     private boolean createFile() {
